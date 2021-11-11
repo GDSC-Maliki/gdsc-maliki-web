@@ -33,18 +33,13 @@
     <div class="page-content">
         <div class="form-v4-content">
             <form class="form-detail" name="submit-to-google-sheet">
-                <audio controls autoplay loop id="playAudio" class="float-end">
-                    <!-- <source src="{{ asset('landing/assets/img/song.ogg') }}" type="audio/mpeg" /> -->
-                    <source src="{{ asset('landing/') }}assets/img/song.mp3" type="audio/mpeg" />
-                    <!-- <source src="{{ asset('landing/assets/img/song.wav') }}" type="audio/mpeg" /> -->
-                </audio>
                 <h2>REGISTER FORM</h2>
                 <!-- Email address input -->
                 <div class="mb-3 form-row">
                     <label class="form-label" for="emailAddress">Email Address<span
                             class="text-danger">*</span></label>
-                    <input class="form-control" id="emailAddress" type="email" placeholder="Email Address"
-                        name="email" required />
+                    <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" name="email"
+                        required />
                 </div>
 
                 <!-- Full Name input -->

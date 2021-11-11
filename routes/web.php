@@ -5,6 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::get('/register-member', 'HomeController@registerMember')->name('register.member');
+Route::get('/calendar-gdsc', 'HomeController@calendargdsc')->name('calendar.gdsc');
+Route::prefix('ascore')->group(function () {
+	Route::get('/faculty', 'HomeController@faculty')->name('faculty');
+	Route::get('/media-creative', 'HomeController@media')->name('media');
+	Route::get('/partnership', 'HomeController@partnership')->name('partnership');
+	Route::get('/technical', 'HomeController@technical')->name('technical');
+});
+
+
 Route::get('/home', function () {
 	if (session('status')) {
 		return redirect()->route('admin.home')->with('status', session('status'));
