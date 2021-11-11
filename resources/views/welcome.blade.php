@@ -1,100 +1,464 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>GDSC Maliki</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Favicons -->
+    <link href="{{ asset('landing/assets/img/logo.png') }}" rel="icon">
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('landing/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('landing/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('landing/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('landing/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('landing/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('landing/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('landing/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('landing/assets/css/style.css') }}" rel="stylesheet">
+</head>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<body>
 
-            .content {
-                text-align: center;
-            }
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
 
-            .title {
-                font-size: 84px;
-            }
+            <a href="index.html"><img src="{{ asset('landing/assets/img/logo.png') }}" style="height: 50px;"
+                    alt=""></a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            {{-- <a href="index.html" class="logo"><img src="{{ asset('landing/assets/img/logo.png') }}" alt="" class="img-fluid"></a> --}}
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#home">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    @if (Route::has('login'))
+                        <div class="top-right links">
+                            @auth
+                                <li><a class="nav-link scrollto" href="{{ url('/home') }}">Dashboard</a></li>
+                            @else
+                                <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
+                                {{-- @if (Route::has('register'))
+								<a href="{{ route('register') }}">Register</a>
+							@endif --}}
+                            @endauth
+                        </div>
+                    @endif
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        </div>
+    </header>
+    <!-- End Header -->
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+    <!-- ======= Hero Section ======= -->
+    <section id="home" class="d-flex align-items-center hero">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-9 text-center">
+                    <h1>Welcome</h1>
+                    <h2>Google Developer Student Clubs</h2>
+                    <h2>UIN Maulana Malik Ibrahim Malang</h2>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+
+    <!-- End Hero -->
+
+    <section id="recruitment" class="d-flex align-items-center hero">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row icon-boxes">
+                <h3 class="text-primary fw-bold text-center mb-3">JOIN US</h3>
+                <div class="col-md-12 align-items-stretch mb-12 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+                    <a href="{{ route('register.member') }}" target="_blank">
+                        <div class="row">
+                            <div class="col-2 ">
+                            </div>
+                            <div class="col-8 icon-box">
+                                <h4 class="title text-center">Member Registration</h4>
+                                <p class="description text-center">Open to all college students in Indonesia</p>
+                            </div>
+                            <div class="col-2 ">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main id="main">
+
+        <section id="recruitment" class="d-flex align-items-center hero">
+            <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="row icon-boxes">
+                    <h3 class="text-primary fw-bold text-center mb-3">OUR DIVISION</h3>
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                        data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="ri-stack-line"></i></div>
+                            <h4 class="title"><a href="#">Faculty Advisor</a></h4>
+                            <p class="description">The Faculty Advisor provides academic advising and support to
+                                advisees from her or his discipline or school.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                        data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="ri-palette-line"></i></div>
+                            <h4 class="title"><a href="#">Media and Creatives</a></h4>
+                            <p class="description">Artistic and cultural works and content created for digital
+                                platforms, or distributed digitally to reach the public.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                        data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="ri-command-line"></i></div>
+                            <h4 class="title"><a href="#">Developer and Speakers</a></h4>
+                            <p class="description">A developer is an individual that builds and create software and
+                                applications. And also can support, advise and guide someone.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                        data-aos-delay="500">
+                        <div class="icon-box">
+                            <div class="icon"><i class="ri-fingerprint-line"></i></div>
+                            <h4 class="title"><a href="#">Partnership and Programs</a></h4>
+                            <p class="description">Strategy to encourage channel partners to recommend the event. And
+                                also responsible for planning and managing events in the most efficient</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <main id="main">
+
+
+
+            <!-- ======= About Section ======= -->
+            <section id="about" class="about">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>About Us</h2>
+
+                    </div>
+
+                    <div class="row content">
+                        <div class="col-lg-6">
+                            <p>
+                                Google Developer Student Clubs (GDSC) are community groups for college and university
+                                students interested in Google developer technologies.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Connect</li>
+                                <li><i class="ri-check-double-line"></i> Learn</li>
+                                <li><i class="ri-check-double-line"></i> Grow</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0">
+                            <p>
+                                Students from all undergraduate or graduate programs with an interest in growing as a
+                                developer are welcome. By joining a GDSC, students grow their knowledge in a
+                                peer-to-peer learning environment and build solutions for local businesses and their
+                                community.
+                            </p>
+                            <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- End About Section -->
+
+            <!-- ======= Team Section ======= -->
+            <section id="team" class="team section-bg">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>Team</h2>
+                        <p>In Google Developer Student Clubs, there is a core team that has the task of assisting leads
+                            in running every event held. Here's the DSC Maliki core team</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{{ asset('landing/assets/img/team/team-1_1.png') }}"
+                                        class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://developers.google.com/profile/u/100733383843930406725"
+                                            target="_blank"><i class="bi bi-google"></i></a>
+                                        <a href="https://www.facebook.com/bintangmf/" target="_blank"><i
+                                                class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/bintangmf_hd/" target="_blank"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/bintangmfhd/" target="_blank"><i
+                                                class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Bintang Miftaqul Huda</h4>
+                                    <span>Lead DSC Maliki</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{{ asset('landing/assets/img/team/team-2.jpeg') }}"
+                                        class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://developers.google.com/profile/u/106421879820392256679"
+                                            target="_blank"><i class="bi bi-google"></i></a>
+                                        <a href="https://www.facebook.com/laksamana.s.31" target="_blank"><i
+                                                class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/laksamanasulthan/" target="_blank"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/mwlite/in/laksamana-sulthan-a-0b76b7135"
+                                            target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Laksamana Sultan A. S.</h4>
+                                    <span>Core Team</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                            data-aos-delay="200">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{{ asset('landing/assets/img/team/team-3.jpeg') }}"
+                                        class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://gdsc.community.dev/u/m6rzhr/#/about" target="_blank"><i
+                                                class="bi bi-google"></i></a>
+                                        <a href="https://www.facebook.com/thoriqharizul/" target="_blank"><i
+                                                class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/thoriq_ha/" target="_blank"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/thoriq-harizul-ahsan-79472912b/"
+                                            target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Thoriq Harizul Ahsan</h4>
+                                    <span>Core Team</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                            data-aos-delay="300">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{{ asset('landing/assets/img/team/team-4.jpeg') }}"
+                                        class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://gdsc.community.dev/u/mjaea7/#/about" target="_blank"><i
+                                                class="bi bi-google"></i></a>
+                                        <a href="https://www.facebook.com/febrinadws/" target="_blank"><i
+                                                class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/febrinadws/" target="_blank"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/febrina-dwita-2973b721a/"
+                                            target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Febrina Dwita Sari</h4>
+                                    <span>Core Team</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                            data-aos-delay="400">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{{ asset('landing/assets/img/team/team-5.jpeg') }}"
+                                        class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://gdsc.community.dev/u/mzp2vq/#/about" target="_blank"><i
+                                                class="bi bi-google"></i></a>
+                                        <a href="https://www.facebook.com/lylalailaila.lylalailaila" target="_blank"><i
+                                                class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/ilazhr_/" target="_blank"><i
+                                                class="bi bi-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/laila-zahrona-758133120/"
+                                            target="_blank"><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Laila Zahrona</h4>
+                                    <span>Core Team</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+            <!-- End Team Section -->
+
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>Contact</h2>
+                        <p>To convey information, questions and complaints, you can use the following communication
+                            media:</p>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="info">
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p>gdsc.maliki@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="info">
+                                <div class="email">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <h4>Location:</h4>
+                                    <p>Jl. Gajayana No.50, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="info">
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p>+62 857-8161-0389</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Contact Section -->
+
+        </main>
+        <!-- End #main -->
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+
+            <div class="container d-md-flex py-4">
+
+                <div class="me-md-auto text-center text-md-start">
+                    <div class="copyright">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script></strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                    <a href="https://gdsc.community.dev/uin-maulana-malik-ibrahim-malang" target="_blank"
+                        class="google-plus"><i class="bx bxl-google"></i></a>
+                    <a href="https://www.facebook.com/dsc.maliki" target="_blank" class="facebook"><i
+                            class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com/dsc_maliki/" target="_blank" class="instagram"><i
+                            class="bx bxl-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC-eOOBsPaHrb6BGEIjJEV8w" target="_blank"
+                        class="youtube"><i class="bx bxl-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/dsc-maliki" target="_blank" class="linkedin"><i
+                            class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="{{ asset('landing/assets/vendor/aos/aos.js') }}"></script>
+        <script src="{{ asset('landing/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('landing/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('landing/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('landing/assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ asset('landing/assets/vendor/purecounter/purecounter.js') }}"></script>
+        <script src="{{ asset('landing/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{{ asset('landing/assets/js/main.js') }}"></script>
+
+
+        <script>
+            var countDownDate = new Date("Sep 14, 2021 20:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("oprec").innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("oprec").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+</body>
+
 </html>
