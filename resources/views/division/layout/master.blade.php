@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 @include('division.layout.head')
 @yield('head')
 
@@ -31,9 +30,8 @@
 
 
     @include('division.layout.script')
-    @push('script')
+    @stack('script')
 
-    @endpush
 </body>
 
 </html>

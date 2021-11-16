@@ -1,6 +1,7 @@
 @extends('division.layout.master')
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/hover-welcome.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('vendor/lightbox2-2.11.3/src/css/lightbox.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('vendor/lightbox2-2.11.3/dist/css/lightbox.min.css') }}">
 @endsection
 @section('content-division')
     <!-- ======= Hero Section ======= -->
@@ -27,8 +28,10 @@
                         <div class="member">
                             <div class="member-img">
 
-                                <img id="myImg" src="{{ asset('event/91121eth0.png') }}" alt="Snow"
-                                    style="width:100%;max-width:300px">
+                                <a class="example-image-link" href="{{ asset('event/91121eth0.png') }}"
+                                    data-lightbox="example-1"><img class="example-image"
+                                        src="{{ asset('event/91121eth0.png') }}" style="width:100%;max-width:300px"
+                                        alt="image-1" /></a>
 
                             </div>
                             <div class="member-info">
@@ -43,8 +46,10 @@
                         <div class="member">
                             <div class="member-img">
 
-                                <img id="myImg" class="image-link" src="{{ asset('event/91121eth0.png') }}" alt="Snow"
-                                    style="width:100%;max-width:300px">
+                                <a class="example-image-link" href="{{ asset('event/91121eth0.png') }}"
+                                    data-lightbox="example-1"><img class="example-image"
+                                        src="{{ asset('event/91121eth0.png') }}" style="width:100%;max-width:300px"
+                                        alt="image-1" /></a>
 
                             </div>
                             <div class="member-info">
@@ -367,11 +372,6 @@
 @endsection
 
 @push('script')
-    <script>
-        $(document).ready(function() {
-            $('.image-link').magnificPopup({
-                type: 'image'
-            });
-        });
-    </script>
+    {{-- <script src="{{ asset('vendor/lightbox2-2.11.3/src/js/lightbox.js') }}"></script> --}}
+    <script src="{{ asset('vendor/lightbox2-2.11.3/dist/js/lightbox-plus-jquery.min.js') }}"></script>
 @endpush
