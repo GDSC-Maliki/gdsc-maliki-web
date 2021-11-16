@@ -31,6 +31,9 @@
 
 
     @include('division.layout.script')
+    @push('script')
+
+    @endpush
 </body>
 
 </html>
