@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Gate;
+use Illuminate\Support\Facades\Validator;
 
 class EventManagementAdmin extends Controller
 {

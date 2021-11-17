@@ -20,6 +20,16 @@ class EventManagementController extends Controller
 	public function qepStore(Request $request)
 	{
 		// dd($request);
+		$this->validate(request(), [
+			'email'    => 'required|string|unique:event_management',
+			'nama'    => 'required|string',
+			'instansi'    => 'required',
+			'pernahbelum'    => 'required',
+			'bersedia'    => 'required',
+			'kendala'    => 'required',
+			'harapan'    => 'required',
+			'nowa'    => 'required',
+		]);
 		$eventManagement = EventManagement::create([
 			'email'     => $request->email,
 			'nama'     => $request->nama,
