@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 	Route::resource('meetings', 'EventManagement');
 
 	// Meetings
-	Route::delete('event-management/destroy', 'EventManagementAdmin@massDestroy')->name('eventmanagement.massDestroy');
+	Route::delete('event-management/destroy/{event_management}', 'EventManagementAdmin@destroy')->name('eventmanagement.destroy');
 	Route::resource('event-management', 'EventManagementAdmin');
 
 	Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
