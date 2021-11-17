@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventManagement;
 
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::get('/register-member', 'HomeController@registerMember')->name('register.member');
 Route::get('/calendar-gdsc', 'HomeController@calendargdsc')->name('calendar.gdsc');
+Route::prefix('events')->group(function () {
+	Route::get('/qep', 'EventManagementController@qep')->name('event.qep');
+	Route::post('/qep', 'EventManagementController@qepStore')->name('event.qep.store');
+});
 Route::prefix('ascore')->group(function () {
 	Route::get('/faculty', 'HomeController@faculty')->name('faculty');
 	Route::get('/media-creative', 'HomeController@media')->name('media');
@@ -48,7 +53,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 	// Meetings
 	Route::delete('meetings/destroy', 'MeetingsController@massDestroy')->name('meetings.massDestroy');
-	Route::resource('meetings', 'MeetingsController');
+	Route::resource('meetings', 'EventManagement');
+
+	// Meetings
+	Route::delete('event-management/destroy', 'EventManagementAdmin@massDestroy')->name('eventmanagement.massDestroy');
+	Route::resource('event-management', 'EventManagementAdmin');
 
 	Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
 });

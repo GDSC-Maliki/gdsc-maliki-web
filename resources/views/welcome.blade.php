@@ -1,6 +1,5 @@
 @extends('division.layout.master')
 @section('head')
-    {{-- <link rel="stylesheet" href="{{ asset('vendor/lightbox2-2.11.3/src/css/lightbox.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('vendor/lightbox2-2.11.3/dist/css/lightbox.min.css') }}">
 @endsection
 @section('content-division')
@@ -57,7 +56,7 @@
                                 <span>Public Event <span class="text-warning">(Terbuka untuk
                                         Umum)</span></span>
                             </div>
-                            <a class="btn btn-info text-white" href="">Register</a>
+                            <a class="btn btn-info text-white" href="{{ route('event.qep') }}">Register</a>
                         </div>
                     </div>
                 </div>
