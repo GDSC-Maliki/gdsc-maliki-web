@@ -45,9 +45,9 @@
                         <div class="member">
                             <div class="member-img">
 
-                                <a class="example-image-link" href="{{ asset('event/91121eth0.png') }}"
+                                <a class="example-image-link" href="{{ asset('event/171121qep.jpg') }}"
                                     data-lightbox="example-1"><img class="example-image"
-                                        src="{{ asset('event/91121eth0.png') }}" style="width:100%;max-width:300px"
+                                        src="{{ asset('event/171121qep.jpg') }}" style="width:100%;max-width:300px"
                                         alt="image-1" /></a>
 
                             </div>

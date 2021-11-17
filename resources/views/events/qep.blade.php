@@ -78,7 +78,7 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('event/91121eth0.png') }}" style="width:100%;max-width:1000px" alt="">
+                    <img src="{{ asset('event/171121qep.jpg') }}" style="width:100%;max-width:1000px" alt="">
                 </div>
 
             </div>
