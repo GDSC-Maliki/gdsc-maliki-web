@@ -197,7 +197,7 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
                             <div class="member-img">
-                                <img src="{{ asset('landing/assets/img/team/team-1_1.png') }}" class="img-fluid"
+                                <img src="{{ asset('landing/assets/img/team/bintang.jpeg') }}" class="img-fluid"
                                     alt="">
                                 <div class="social">
                                     <a href="https://developers.google.com/profile/u/100733383843930406725"
