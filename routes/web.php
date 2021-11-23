@@ -53,7 +53,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 	// Meetings
 	Route::delete('meetings/destroy', 'MeetingsController@massDestroy')->name('meetings.massDestroy');
-	Route::resource('meetings', 'EventManagement');
+	Route::resource('meetings', 'MeetingsController');
 
 	// Meetings
 	Route::delete('event-management/destroy/{event_management}', 'EventManagementAdmin@destroy')->name('eventmanagement.destroy');
